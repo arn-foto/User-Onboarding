@@ -146,7 +146,7 @@ export default function Form() {
                 value={formState.tradeOne}
                 onChange={inputChange} 
                 />
-                {errors.name.length > 0 ? (<p className="error">{errors.benchPress}</p> ): null}
+                {errors.name.length > 0 ? (<p className="error">{errors.tradeOne}</p> ): null}
             </label>
             <br/>
             <label htmlFor="tradeTwo">
@@ -158,7 +158,7 @@ export default function Form() {
                 value={formState.tradeTwo}
                 onChange={inputChange} 
                 />
-                {errors.name.length > 0 ? (<p className="error">{errors.pullups}</p> ): null}
+                {errors.name.length > 0 ? (<p className="error">{errors.tradeTwo}</p> ): null}
             </label>
             <br/>
             <label htmlFor="tradeThree">
@@ -170,7 +170,7 @@ export default function Form() {
                 value={formState.tradeThree}
                 onChange={inputChange} 
                 />
-                {errors.name.length > 0 ? (<p className="error">{errors.squat}</p> ): null}
+                {errors.name.length > 0 ? (<p className="error">{errors.tradeThree}</p> ): null}
             </label>
             <br/>
             <label htmlFor="checkbox">

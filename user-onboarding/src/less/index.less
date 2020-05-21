@@ -1,31 +1,66 @@
 @phone: ~"only screen and (max-width:500px)";
 
-.App{
-   
+.App{   
     color:pink;
     background-color: blue;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+    @media @phone {
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
 }
 
 form{
-   
-    padding: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
     color:yellow;
+    
+    @media @phone {
+        //display: flex;
+        flex-direction: column;
+        
+        
+    }
 }
 
 h2{
     color:orange;
-}
-
-label {
     display: flex;
     flex-direction: column;
     text-align: center;
-    color:teal;
-
+    
     @media @phone {
         display: flex;
         flex-direction: column;
         text-align: center;
-      
+        
+        
     }
+}
+
+label {
+    
+    color:teal;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @media @phone {
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+}
+
+checkbox {
+    display: flex;
+    flex-direction: column;
 }
