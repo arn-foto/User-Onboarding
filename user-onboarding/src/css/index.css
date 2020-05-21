@@ -1,0 +1,17 @@
+.App {
+  color: pink;
+  background-color: blue;
+}
+label {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: auto;
+  color: yellow;
+}
+h2 {
+  color: orange;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
