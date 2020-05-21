@@ -1,18 +1,24 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
 import * as yup from "yup";
+// Yup is a JavaScript schema builder for value parsing and validation.
+//  Define a schema, transform a value to match, validate the shape of an existing value, or both.
 
+
+    // string.required(message?: string | function): Schema
+    // The same as the mixed() schema required, except 
+    //that empty strings are also considered 'missing' values.
 const formSchema = yup.object().shape({
-    name: yup.string().required("I'll KNow if You're Lying"),
-    email: yup.string().email().required("Enter a Valid Email"),
-    password: yup.string().required("I know your password Anyway"),  
+    name: yup.string().required("I'll kow if you're lying"),
+    email: yup.string().email().required("Enter a valid email"),
+    password: yup.string().required("I know your password anyway"),  
     tradeOne: yup.string().required("This is required"),
     tradeTwo: yup.string().required("Pick Something"),
     tradeThree: yup.string().required("Be very very sure"),
     checkbox: yup.boolean().oneOf([true], "check properly"),
     });
 
-
+// set state to the values below for later use
 export default function Form() {
     const [formState, setFormState] = useState({
         name: "",
@@ -34,7 +40,8 @@ export default function Form() {
         tradeTwo: "",
         tradeThree: "",
     })
-
+// setting state for submit button,  You wont be able to hit the submit button unless anything is inputted
+// in the text areas.  
     const [submitDisable, setSubmitDisabled] = useState(true);
 
     const [post, setPost] = useState([]);
@@ -44,7 +51,7 @@ export default function Form() {
         });
         }, [formState]);
     
-
+//
     const validateChange = e => {
         yup
             .reach(formSchema, e.target.name)
@@ -62,6 +69,7 @@ export default function Form() {
             });
             });
         };
+        //  prevents page from auto refreshing
         const formSubmit = e => {
         e.preventDefault();
         axios
@@ -95,7 +103,8 @@ export default function Form() {
             validateChange(event);
             setFormState(newFormData);
     }
-
+//  The text areas, I set it so if the length of what you're trying to submit is no greater than 0 characters
+// then each one will promt you with an error message.
     return(
     <div>
         <h2>Sign Away your Soul</h2>
@@ -173,17 +182,18 @@ export default function Form() {
                 {errors.name.length > 0 ? (<p className="error">{errors.tradeThree}</p> ): null}
             </label>
             <br/>
-            <label htmlFor="checkbox">
-                Are You Really Really Sure About This?
-                <input 
-                id="checkbox"
-                type="checkbox"
-                checked={formState.checkbox}
-                name="checkbox"
-                onChange={inputChange}
-                />
-                {errors.checked === false ? (<p className="error">{errors.checkbox}</p> ): null}
-            </label>
+            <div className="boxcheck"><label htmlFor="check">
+            Are You Really Really Sure About This?
+            <input 
+            id="checkbox"
+            type="checkbox"
+            checked={formState.checkbox}
+            name="checkbox"
+            onChange={inputChange}
+            />
+            {errors.checked === false ? (<p className="error">{errors.checkbox}</p> ): null}
+        </label></div>
+            
             <br/>
             
             <button disabled={submitDisable}>Submit</button>
