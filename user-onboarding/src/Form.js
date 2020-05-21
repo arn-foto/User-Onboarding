@@ -185,8 +185,7 @@ export default function Form() {
                 {errors.checked === false ? (<p className="error">{errors.checkbox}</p> ): null}
             </label>
             <br/>
-            <pre>{JSON.stringify(post, null, 2)}</pre>
-
+            
             <button disabled={submitDisable}>Submit</button>
         </form>
     </div> 

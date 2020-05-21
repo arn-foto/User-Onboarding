@@ -2,16 +2,23 @@
   color: pink;
   background-color: blue;
 }
-label {
-  display: flex;
-  justify-content: center;
-  margin: auto;
+form {
   padding: auto;
   color: yellow;
 }
 h2 {
   color: orange;
+}
+label {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   text-align: center;
+  color: teal;
+}
+@media only screen and (max-width:500px) {
+  label {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 }
