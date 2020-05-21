@@ -69,7 +69,8 @@ export default function Form() {
             });
             });
         };
-        //  prevents page from auto refreshing
+        //  prevents page from auto refreshing, Also created a post request to 
+        // request data from the API
         const formSubmit = e => {
         e.preventDefault();
         axios
